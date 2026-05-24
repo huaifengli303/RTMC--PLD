@@ -5,79 +5,137 @@ body {
   padding: 0;
   color: #222;
 }
+
 header {
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.90);
   padding: 1rem 2rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
 header h1 { margin: 0 0 0.3em 0; }
+
 .controls {
   margin: 1.5em 0.5em;
   background: #fff4;
   border-radius: 0.75em;
-  padding: 1em;
+  padding: 1em 1.5em;
   display: flex; flex-wrap: wrap; gap: 1em; align-items: center;
+  font-size: 1.05em;
 }
+
+.controls label, .controls select, .controls button {
+  margin-right: 0.5em;
+}
+
 .controls select, .controls button {
   font-size: 1em;
   padding: 0.3em 0.7em;
   border-radius: 0.3em;
   border: 1px solid #a9a9a9;
+  background: #f3f3fa;
 }
+
+.controls button {
+  background: linear-gradient(90deg, #a8edea 0%, #fed6e3 100%);
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.controls button:hover {
+  background: linear-gradient(90deg, #fed6e3 0%, #a8edea 100%);
+}
+
 .metrics {
   display: flex;
   justify-content: space-around;
   gap: 1em;
-  padding: 1em;
+  padding: 1em 1vw;
+  flex-wrap: wrap;
 }
+
 .metric-card {
   flex: 1 1 20%;
   background: #fff9;
-  margin: 0.2em;
+  margin: 0.4em;
   border-radius: 0.6em;
   padding: 1.1em;
   min-width: 140px;
   box-shadow: 0 2px 8px #0001;
   text-align: center;
+  position: relative;
 }
+
 .metric-value {
   font-size: 2.2em;
   font-weight: bold;
 }
+
 .progress {
   margin: 0.8em auto 0.2em auto;
   height: 8px; width: 80%;
-  background: #eee;
+  background: #e8e8f5;
   border-radius: 6px;
   overflow: hidden;
 }
+
 .progress div {
   height: 100%;
   transition: width 0.3s;
-  background: linear-gradient(90deg,#7dd56f,#f8e453,#f2745e);
+  background: linear-gradient(90deg, #7dd56f, #f8e453, #f2745e 80%);
 }
+
 .charts {
   margin: 2em 3vw 1.5em 3vw;
   background: #fff8;
   border-radius: 0.7em;
-  padding: 2em 0 2em 0;
+  padding: 1.7em 1vw 2em 1vw;
   box-shadow: 0 1px 8px #0001;
 }
+.charts h2 {
+  margin-top: 0;
+  margin-bottom: 1em;
+  font-size: 1.3em;
+  font-weight: 500;
+  color: #33376e;
+  letter-spacing: 1px;
+}
+#mainChart, #compareChart {
+  max-width: 98%;
+  background: #fff;
+  border-radius: 8px;
+}
+
 .alerts {
   max-width: 700px;
   margin: 0 auto 2em auto;
   background: #fff5;
   border-radius: 0.7em;
-  padding: 1em;
+  padding: 1.2em 1.3em;
+  min-height: 70px;
   box-shadow: 0 1px 8px #0001;
 }
+
 .alerts h2 {margin-top:0;}
-#alertList { margin:0; padding-left:1.2em; }
-#alertList li {margin-bottom:0.6em;}
+#alertList { margin:0; padding-left:1.2em; font-size:1em; }
+#alertList li {
+  margin-bottom:0.6em;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
 footer {
   text-align: center;
-  font-size: 0.9em;
+  font-size: 0.97em;
   background: #fff3;
   padding: 1em 0;
   border-top: 1px solid #eaeaea;
+  margin-top: 2em;
 }
+
+@media (max-width: 850px) {
+  .metrics { flex-direction: column; }
+  .metric-card { min-width:180px; }
+  .charts { padding-left:0.2em; padding-right:0.2em; }
+}
+
+/* Distinct colors for comparison bars (optional if colors are set in JS) */
+#compareChart .bar { fill: #88a0fa; }
