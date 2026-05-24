@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipment Sensor Monitor Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Equipment Sensor Monitor Dashboard</h1>
+        <p>Real-time monitoring of Pumps, Motors, Compressors, and Fans</p>
+    </header>
+
+    <section class="controls">
+        <label for="equipmentSelect">Equipment:</label>
+        <select id="equipmentSelect">
+            <option value="pump">Pump Unit A</option>
+            <option value="motor">Motor Unit B</option>
+            <option value="compressor">Compressor Unit C</option>
+            <option value="fan">Fan Unit D</option>
+        </select>
+        <button id="viewRealtime">Real-Time</button>
+        <button id="viewDaily">Daily</button>
+        <button id="viewWeekly">Weekly</button>
+    </section>
+
+    <section class="metrics">
+        <div class="metric-card" id="tempCard">
+            <h2>Temperature (°C)</h2>
+            <span class="metric-value" id="tempValue">--</span>
+            <div class="progress"><div id="tempBar"></div></div>
+        </div>
+        <div class="metric-card" id="pressureCard">
+            <h2>Pressure (PSI)</h2>
+            <span class="metric-value" id="pressureValue">--</span>
+            <div class="progress"><div id="pressureBar"></div></div>
+        </div>
+        <div class="metric-card" id="vibrationCard">
+            <h2>Vibration (mm/s)</h2>
+            <span class="metric-value" id="vibrationValue">--</span>
+            <div class="progress"><div id="vibrationBar"></div></div>
+        </div>
+        <div class="metric-card" id="powerCard">
+            <h2>Power (kW)</h2>
+            <span class="metric-value" id="powerValue">--</span>
+            <div class="progress"><div id="powerBar"></div></div>
+        </div>
+    </section>
+
+    <section class="charts">
+        <canvas id="mainChart"></canvas>
+    </section>
+
+    <section class="alerts">
+        <h2>Alerts</h2>
+        <ul id="alertList">
+            <!-- Alerts will appear here -->
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Equipment Sensor Monitor Dashboard</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
