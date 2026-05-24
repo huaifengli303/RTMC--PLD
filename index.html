@@ -10,10 +10,15 @@
 <body>
     <header>
         <h1>Equipment Sensor Monitor Dashboard</h1>
-        <p>Real-time monitoring of Pumps, Motors, Compressors, and Fans</p>
+        <p>Real-time monitoring of Pumps, Motors, Compressors, and Fans by Area</p>
     </header>
-
     <section class="controls">
+        <label for="areaSelect">Area:</label>
+        <select id="areaSelect">
+            <option value="MRT">MRT</option>
+            <option value="MRC">MRC</option>
+            <option value="WBR">WBR</option>
+        </select>
         <label for="equipmentSelect">Equipment:</label>
         <select id="equipmentSelect">
             <option value="pump">Pump Unit A</option>
@@ -24,8 +29,14 @@
         <button id="viewRealtime">Real-Time</button>
         <button id="viewDaily">Daily</button>
         <button id="viewWeekly">Weekly</button>
+        <label for="compareType" style="margin-left:1em;">Compare:</label>
+        <select id="compareType">
+          <option value="temperature">Temperature (°C)</option>
+          <option value="pressure">Pressure (PSI)</option>
+          <option value="vibration">Vibration (mm/s)</option>
+          <option value="power">Power (kW)</option>
+        </select>
     </section>
-
     <section class="metrics">
         <div class="metric-card" id="tempCard">
             <h2>Temperature (°C)</h2>
@@ -48,22 +59,21 @@
             <div class="progress"><div id="powerBar"></div></div>
         </div>
     </section>
-
     <section class="charts">
+        <h2>Sensor Trends</h2>
         <canvas id="mainChart"></canvas>
     </section>
-
+    <section class="charts">
+        <h2>Comparison by Area</h2>
+        <canvas id="compareChart"></canvas>
+    </section>
     <section class="alerts">
         <h2>Alerts</h2>
-        <ul id="alertList">
-            <!-- Alerts will appear here -->
-        </ul>
+        <ul id="alertList"></ul>
     </section>
-
     <footer>
         <p>&copy; 2026 Equipment Sensor Monitor Dashboard</p>
     </footer>
-
     <script src="app.js"></script>
 </body>
 </html>
