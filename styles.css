@@ -1,0 +1,83 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+header {
+  background: rgba(255,255,255,0.85);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+header h1 { margin: 0 0 0.3em 0; }
+.controls {
+  margin: 1.5em 0.5em;
+  background: #fff4;
+  border-radius: 0.75em;
+  padding: 1em;
+  display: flex; flex-wrap: wrap; gap: 1em; align-items: center;
+}
+.controls select, .controls button {
+  font-size: 1em;
+  padding: 0.3em 0.7em;
+  border-radius: 0.3em;
+  border: 1px solid #a9a9a9;
+}
+.metrics {
+  display: flex;
+  justify-content: space-around;
+  gap: 1em;
+  padding: 1em;
+}
+.metric-card {
+  flex: 1 1 20%;
+  background: #fff9;
+  margin: 0.2em;
+  border-radius: 0.6em;
+  padding: 1.1em;
+  min-width: 140px;
+  box-shadow: 0 2px 8px #0001;
+  text-align: center;
+}
+.metric-value {
+  font-size: 2.2em;
+  font-weight: bold;
+}
+.progress {
+  margin: 0.8em auto 0.2em auto;
+  height: 8px; width: 80%;
+  background: #eee;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.progress div {
+  height: 100%;
+  transition: width 0.3s;
+  background: linear-gradient(90deg,#7dd56f,#f8e453,#f2745e);
+}
+.charts {
+  margin: 2em 3vw 1.5em 3vw;
+  background: #fff8;
+  border-radius: 0.7em;
+  padding: 2em 0 2em 0;
+  box-shadow: 0 1px 8px #0001;
+}
+.alerts {
+  max-width: 700px;
+  margin: 0 auto 2em auto;
+  background: #fff5;
+  border-radius: 0.7em;
+  padding: 1em;
+  box-shadow: 0 1px 8px #0001;
+}
+.alerts h2 {margin-top:0;}
+#alertList { margin:0; padding-left:1.2em; }
+#alertList li {margin-bottom:0.6em;}
+footer {
+  text-align: center;
+  font-size: 0.9em;
+  background: #fff3;
+  padding: 1em 0;
+  border-top: 1px solid #eaeaea;
+}
